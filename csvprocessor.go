@@ -30,6 +30,7 @@ func main() {
 	defer writer.Flush()
 
 	var lineCount int = 0
+	var skipCount int = 2
 	for {
 		// Read current row of unprocessed csv
 		row, err := reader.Read()
@@ -37,6 +38,13 @@ func main() {
 			break
 		} else if err != nil {
 			panic(err)
+		}
+
+		// Skip first four header rows
+		if skipCount > 0 {
+			fmt.Println("Skipping row:", row[1], row[3])
+			skipCount--
+			continue
 		}
 
 		// Write relevant values to new csv
