@@ -32,10 +32,6 @@ func main() {
 	var lineCount int = 0
 	var skipCount int = 2
 
-	var noCount int = 0
-	var yaCount int = 0
-	var emCount int = 0
-
 	for {
 		// Read current row of unprocessed csv
 		row, err := reader.Read()
@@ -51,29 +47,17 @@ func main() {
 			continue
 		}
 
-		// Write relevant values to new csv
-		pair := make([]string, 2)
-		pair[0] = row[1]
-		pair[1] = row[3]
-		writer.Write(pair)
-		lineCount++
+		// Check if article value has selection
+		if row[6] == "yes" || row[6] == "no" {
 
-		switch row[6] {
-		case "yes":
-			yaCount++
-		case "no":
-			noCount++
-		default:
-			emCount++
+			// Write relevant values to csv
+			pair := make([]string, 2)
+			pair[0] = row[1]
+			pair[1] = row[3]
+			writer.Write(pair)
+			lineCount++
 		}
 	}
-
-	fmt.Println("Article Value Selections:")
-	fmt.Println("yes:", yaCount)
-	fmt.Println("no:", noCount)
-	fmt.Println("yes+no:", yaCount+noCount)
-	fmt.Println("empty:", emCount)
-	fmt.Println()
 
 	fmt.Println(lineCount, "lines were written to processed.csv")
 }
