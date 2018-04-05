@@ -31,6 +31,11 @@ func main() {
 
 	var lineCount int = 0
 	var skipCount int = 2
+
+	var noCount int = 0
+	var yaCount int = 0
+	var emCount int = 0
+
 	for {
 		// Read current row of unprocessed csv
 		row, err := reader.Read()
@@ -42,7 +47,6 @@ func main() {
 
 		// Skip first four header rows
 		if skipCount > 0 {
-			fmt.Println("Skipping row:", row[1], row[3])
 			skipCount--
 			continue
 		}
@@ -53,7 +57,23 @@ func main() {
 		pair[1] = row[3]
 		writer.Write(pair)
 		lineCount++
+
+		switch row[6] {
+		case "yes":
+			yaCount++
+		case "no":
+			noCount++
+		default:
+			emCount++
+		}
 	}
 
-	fmt.Println(lineCount, "lines written to file.")
+	fmt.Println("Article Value Selections:")
+	fmt.Println("yes:", yaCount)
+	fmt.Println("no:", noCount)
+	fmt.Println("yes+no:", yaCount+noCount)
+	fmt.Println("empty:", emCount)
+	fmt.Println()
+
+	fmt.Println(lineCount, "lines were written to processed.csv")
 }
