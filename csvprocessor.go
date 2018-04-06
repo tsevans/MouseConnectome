@@ -29,7 +29,7 @@ func main() {
 	writer := csv.NewWriter(outfile)
 	defer writer.Flush()
 
-	var lineCount int = 0
+	var lineCount int
 	var skipCount int = 2
 
 	for {
@@ -47,9 +47,8 @@ func main() {
 			continue
 		}
 
-		// Check if article value has selection
-		if row[6] == "yes" || row[6] == "no" {
-
+		// Check if connection was selected for article
+		if row[6] == "yes" {
 			// Write relevant values to csv
 			pair := make([]string, 2)
 			pair[0] = row[1]
