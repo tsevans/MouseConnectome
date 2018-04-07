@@ -9,3 +9,5 @@ The current data for the model of a rat's brain consists of two, bilaterally sym
 
 ## List of Implemented Algorithms
 * Label Propagation Algorithm for Near Linear Time Community Detection, by Raghavan et al.
+  * [Reference](https://arxiv.org/pdf/0709.2938.pdf)
+  * [Online Visual Demo](http://opcoast.com/demos/label_propagation/index.html)
