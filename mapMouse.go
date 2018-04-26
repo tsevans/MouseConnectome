@@ -9,7 +9,7 @@ import (
 
 func main() {
 	// Open unprocessed csv file
-	infile, err := os.Open("unprocessed_data.csv")
+	infile, err := os.Open("dataset03.csv")
 	if err != nil {
 		panic(err)
 	}
@@ -30,7 +30,7 @@ func main() {
 	defer writer.Flush()
 
 	var lineCount int
-	var skipCount int = 2
+	var skipCount int = 3
 
 	for {
 		// Read current row of unprocessed csv
@@ -48,16 +48,17 @@ func main() {
 		}
 
 		// Check if connection was selected for article
-		if row[6] == "yes" {
-            
+		if lineCount < 77 {
+
 			// Write relevant values to csv
 			pair := make([]string, 2)
-			pair[0] = row[0] + "_" + row[1]
-			pair[1] = row[2] + "_" + row[3]
+			pair[0] = row[4]
+			pair[1] = row[3]
 			writer.Write(pair)
+			fmt.Println(row[4], " --> ", row[3])
 			lineCount++
 		}
 	}
-	
+
 	fmt.Println(lineCount, "lines were written to processed.csv")
 }

@@ -1,0 +1,557 @@
++==================+
+| Mouse Connectome |
++==================+
+loop 1
+loop 2
+loop 3
+loop 4
+loop 5
+loop 6
+loop 7
+loop 8
+loop 9
+loop 10
+loop 11
+loop 12
+node num: 308
+class num: 5
+class: [u'two_VISpl', u'right_ORBvl', u'one_PAR', u'left_AOB', u'right_AUDp']
+info:
+------------------------------------------
+two_VISpl(156):
+	Posteromedial visual area
+	Posterior parietal association areas
+	Anteromedial visual area
+	Anterior olfactory area
+	Accessory olfactory bulb
+	Basomedial amygdalar nucleus, Anterior part
+	Postsubiculum
+	Basomedial amygdalar nucleus, Anterior part
+	Field CA1, Dorsal part
+	Field CA3
+	Infralimbic area
+	Rostrolateral visual area
+	Cortical subplate, Layer 6b
+	Field CA1, Ventral part
+	Basomedial amygdalar nucleus, Posterior part
+	Cortical amygdala area, Anterior part
+	Gustatory area
+	Retrosplenial region, Ventral part, Zone b/c
+	Lateral amygdalar nucleus
+	Prelimbic area
+	Posterior amygdalar nucleus
+	Ventrolateral orbital area
+	Main olfactory bulb
+	Posterolateral visual area
+	Posteromedial visual area
+	Basomedial amygdalar nucleus, Posterior part
+	Perirhinal area
+	Cortical amygdala area, Posterior part, Lateral zone
+	Visceral area
+	Entorhinal area, Medial part
+	Primary somatomotor area
+	Secondary somatomotor areas
+	Basolateral amygdalar nucleus, Posterior part
+	Intermediolateral visual area
+	Retrosplenial region, Lateral agranular part
+	Intermediolateral visual area
+	Laterolateral visual area
+	Medial orbital area
+	Basolateral amygdalar nucleus, Anterior part
+	Postsubiculum
+	Temporal association areas
+	Primary auditory area
+	Presubiculum
+	Dentate gyrus
+	Anterior laterolateral visual area
+	Supplemental somatosensory area
+	Basolateral amygdalar nucleus, Posterior part
+	Temporal association areas
+	Primary somatosensory area
+	Field CA2
+	Gustatory area
+	Basolateral amygdalar nucleus, Anterior part
+	Endopiriform nucleus, Ventral part
+	Cortical amygdala area, Posterior part, Medial zone
+	Cortical amygdala area, Posterior part, Lateral zone
+	Infralimbic area
+	Entorhinal area, Lateral part
+	Dentate gyrus
+	Nucleus of lateral olfactory tract
+	Field CA3
+	Fasciola cinerea
+	Mediolateral visual area
+	Retrosplenial region, Ventral part, Zone a
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Prelimbic area
+	Cortical amygdala area, Anterior part
+	one_
+	Tenia tecta, Ventral part
+	Retrosplenial region, Ventral part, Zone a
+	Secondary somatomotor areas
+	Primary somatomotor area
+	Claustrum
+	Tenia tecta, Dorsal part
+	Ectorhinal area
+	Retrosplenial region, Dorsal part
+	Endopiriform nucleus, Dorsal part
+	Nucleus of lateral olfactory tract, dorsal cap
+	Posterior amygdalar nucleus
+	Lateral orbital area
+	Indusium griseum
+	Subiculum, Ventral part
+	Ventral orbital area
+	Main olfactory bulb
+	Retrosplenial region, Ventral part, Zone b/c
+	Subiculum, Dorsal part
+	Cortical subplate, Layer 6b
+	Entorhinal area, Lateral part
+	Entorhinal area, Medial part
+	Anterior cingulate area, Dorsal part
+	Endopiriform nucleus, Dorsal part
+	Cortical amygdala area, Posterior part, Medial zone
+	Tenia tecta, Ventral part
+	Dorsal auditory areas
+	Endopiriform nucleus, Ventral part
+	Anterior cingulate area, Ventral part
+	Accessory olfactory bulb
+	Anterior olfactory area
+	Tenia tecta, Dorsal part
+	Lateral amygdalar nucleus
+	Fasciola cinerea
+	Field CA1, Ventral part
+	Postpiriform transition area
+	Primary somatosensory area
+	Supplemental somatosensory area
+	Laterolateral visual area
+	Mediolateral visual area
+	Field CA1, Dorsal part
+	Dorsal agranular insular area
+	Primary visual area
+	Nucleus of lateral olfactory tract, dorsal cap
+	Field CA2
+	Anterior cingulate area, Ventral part
+	Primary visual area
+	Presubiculum
+	Anterior cingulate area, Dorsal part
+	Posterior auditory area
+	Piriform area
+	Anterior laterolateral visual area
+	Piriform-amygdalar area
+	Perirhinal area
+	Piriform-amygdalar area
+	Indusium griseum
+	Ventral auditory areas
+	Posterior auditory area
+	Ventral agranular insular area
+	Posterolateral visual area
+	Piriform area
+	Subiculum, Ventral part
+	Posterior agranular insular area
+	Anterolateral visual area
+	Parasubiculum
+	Parasubiculum
+	Dorsal auditory areas
+	Dorsal agranular insular area
+	Ventral auditory areas
+	Visceral area
+	Subiculum, Dorsal part
+	Posterior parietal association areas
+	Nucleus of lateral olfactory tract
+	Lateral orbital area
+	Medial orbital area
+	Ventral orbital area
+	Rostrolateral visual area
+	Primary auditory area
+	Ectorhinal area
+	Anteromedial visual area
+	Anterolateral visual area
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Retrosplenial region, Dorsal part
+	Ventrolateral orbital area
+	Claustrum
+	Cortical amygdala area, Posterior part, Lateral zone
+	Ventral agranular insular area
+	Posterior agranular insular area
+	Retrosplenial region, Lateral agranular part
+	Postpiriform transition area
+
+------------------------------------------
+right_ORBvl(140):
+	Endopiriform nucleus, Dorsal part
+	Endopiriform nucleus, Ventral part
+	Basolateral amygdalar nucleus, Posterior part
+	Tenia tecta, Ventral part
+	Basolateral amygdalar nucleus, Anterior part
+	Intermediolateral visual area
+	Laterolateral visual area
+	Mediolateral visual area
+	Endopiriform nucleus, Ventral part
+	Piriform area
+	Visceral area
+	Fasciola cinerea
+	Rostrolateral visual area
+	Retrosplenial region, Ventral part, Zone a
+	Fasciola cinerea
+	Tenia tecta, Dorsal part
+	Endopiriform nucleus, Dorsal part
+	Ventral auditory areas
+	Tenia tecta, Ventral part
+	Infralimbic area
+	Retrosplenial region, Ventral part, Zone a
+	Prelimbic area
+	Anteromedial visual area
+	Piriform-amygdalar area
+	Dorsal auditory areas
+	Cortical subplate, Layer 6b
+	Nucleus of lateral olfactory tract, dorsal cap
+	Posterior amygdalar nucleus
+	Entorhinal area, Medial part
+	Retrosplenial region, Dorsal part
+	Basomedial amygdalar nucleus, Anterior part
+	Primary auditory area
+	Lateral amygdalar nucleus
+	Intermediolateral visual area
+	Laterolateral visual area
+	Parasubiculum
+	Gustatory area
+	Ventral orbital area
+	Infralimbic area
+	Ventral orbital area
+	Dorsal auditory areas
+	Lateral orbital area
+	Primary somatosensory area
+	Perirhinal area
+	Posterior auditory area
+	Nucleus of lateral olfactory tract
+	Posteromedial visual area
+	Dentate gyrus
+	Cortical amygdala area, Posterior part, Lateral zone
+	Basolateral amygdalar nucleus, Anterior part
+	Cortical subplate, Layer 6b
+	Field CA1, Ventral part
+	Posterior agranular insular area
+	Field CA1, Dorsal part
+	Subiculum, Ventral part
+	Ventral agranular insular area
+	Posterior auditory area
+	Field CA1, Dorsal part
+	Posterolateral visual area
+	Field CA3
+	Ventrolateral orbital area
+	Ectorhinal area
+	Basomedial amygdalar nucleus, Posterior part
+	Dorsal agranular insular area
+	Anterior laterolateral visual area
+	Medial orbital area
+	Retrosplenial region, Ventral part, Zone b/c
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Postsubiculum
+	Secondary somatomotor areas
+	Supplemental somatosensory area
+	Field CA2
+	Cortical amygdala area, Posterior part, Medial zone
+	Cortical amygdala area, Posterior part, Lateral zone
+	Posterior agranular insular area
+	Main olfactory bulb
+	Mediolateral visual area
+	Primary somatosensory area
+	Piriform area
+	Basolateral amygdalar nucleus, Posterior part
+	Basomedial amygdalar nucleus, Posterior part
+	Anterior cingulate area, Dorsal part
+	Perirhinal area
+	Visceral area
+	Nucleus of lateral olfactory tract
+	Posterior parietal association areas
+	Primary visual area
+	Posterior amygdalar nucleus
+	Field CA1, Ventral part
+	Indusium griseum
+	Gustatory area
+	Anterior cingulate area, Dorsal part
+	Tenia tecta, Dorsal part
+	Parasubiculum
+	Entorhinal area, Lateral part
+	Entorhinal area, Medial part
+	Postsubiculum
+	Subiculum, Dorsal part
+	Presubiculum
+	Basomedial amygdalar nucleus, Anterior part
+	Cortical amygdala area, Posterior part, Medial zone
+	Cortical amygdala area, Anterior part
+	Temporal association areas
+	Anterior olfactory area
+	Primary visual area
+	Indusium griseum
+	Ventral agranular insular area
+	Supplemental somatosensory area
+	Retrosplenial region, Lateral agranular part
+	Dorsal agranular insular area
+	Presubiculum
+	Retrosplenial region, Ventral part, Zone b/c
+	Anterolateral visual area
+	Anterior cingulate area, Ventral part
+	Ectorhinal area
+	Temporal association areas
+	Field CA2
+	Field CA3
+	Anteromedial visual area
+	Nucleus of lateral olfactory tract, dorsal cap
+	Anterolateral visual area
+	Claustrum
+	Anterior laterolateral visual area
+	Entorhinal area, Lateral part
+	Anterior olfactory area
+	Lateral amygdalar nucleus
+	Lateral orbital area
+	Medial orbital area
+	Cortical amygdala area, Anterior part
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Retrosplenial region, Lateral agranular part
+	Subiculum, Dorsal part
+	Dentate gyrus
+	Posterolateral visual area
+	Retrosplenial region, Dorsal part
+	Posteromedial visual area
+	Subiculum, Ventral part
+	Claustrum
+	Posterior parietal association areas
+	Ventrolateral orbital area
+
+------------------------------------------
+one_PAR(156):
+	Posteromedial visual area
+	Posterior parietal association areas
+	Anteromedial visual area
+	Anterior olfactory area
+	Accessory olfactory bulb
+	Basomedial amygdalar nucleus, Anterior part
+	Postsubiculum
+	Basomedial amygdalar nucleus, Anterior part
+	Field CA1, Dorsal part
+	Field CA3
+	Infralimbic area
+	Rostrolateral visual area
+	Cortical subplate, Layer 6b
+	Field CA1, Ventral part
+	Basomedial amygdalar nucleus, Posterior part
+	Cortical amygdala area, Anterior part
+	Gustatory area
+	Retrosplenial region, Ventral part, Zone b/c
+	Lateral amygdalar nucleus
+	Prelimbic area
+	Posterior amygdalar nucleus
+	Ventrolateral orbital area
+	Main olfactory bulb
+	Posterolateral visual area
+	Posteromedial visual area
+	Basomedial amygdalar nucleus, Posterior part
+	Perirhinal area
+	Cortical amygdala area, Posterior part, Lateral zone
+	Visceral area
+	Entorhinal area, Medial part
+	Primary somatomotor area
+	Secondary somatomotor areas
+	Basolateral amygdalar nucleus, Posterior part
+	Intermediolateral visual area
+	Retrosplenial region, Lateral agranular part
+	Intermediolateral visual area
+	Laterolateral visual area
+	Medial orbital area
+	Basolateral amygdalar nucleus, Anterior part
+	Postsubiculum
+	Temporal association areas
+	Primary auditory area
+	Presubiculum
+	Dentate gyrus
+	Anterior laterolateral visual area
+	Supplemental somatosensory area
+	Basolateral amygdalar nucleus, Posterior part
+	Temporal association areas
+	Primary somatosensory area
+	Field CA2
+	Gustatory area
+	Basolateral amygdalar nucleus, Anterior part
+	Endopiriform nucleus, Ventral part
+	Cortical amygdala area, Posterior part, Medial zone
+	Cortical amygdala area, Posterior part, Lateral zone
+	Infralimbic area
+	Entorhinal area, Lateral part
+	Dentate gyrus
+	Nucleus of lateral olfactory tract
+	Field CA3
+	Fasciola cinerea
+	Mediolateral visual area
+	Retrosplenial region, Ventral part, Zone a
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Prelimbic area
+	Cortical amygdala area, Anterior part
+	one_
+	Tenia tecta, Ventral part
+	Retrosplenial region, Ventral part, Zone a
+	Secondary somatomotor areas
+	Primary somatomotor area
+	Claustrum
+	Tenia tecta, Dorsal part
+	Ectorhinal area
+	Retrosplenial region, Dorsal part
+	Endopiriform nucleus, Dorsal part
+	Nucleus of lateral olfactory tract, dorsal cap
+	Posterior amygdalar nucleus
+	Lateral orbital area
+	Indusium griseum
+	Subiculum, Ventral part
+	Ventral orbital area
+	Main olfactory bulb
+	Retrosplenial region, Ventral part, Zone b/c
+	Subiculum, Dorsal part
+	Cortical subplate, Layer 6b
+	Entorhinal area, Lateral part
+	Entorhinal area, Medial part
+	Anterior cingulate area, Dorsal part
+	Endopiriform nucleus, Dorsal part
+	Cortical amygdala area, Posterior part, Medial zone
+	Tenia tecta, Ventral part
+	Dorsal auditory areas
+	Endopiriform nucleus, Ventral part
+	Anterior cingulate area, Ventral part
+	Accessory olfactory bulb
+	Anterior olfactory area
+	Tenia tecta, Dorsal part
+	Lateral amygdalar nucleus
+	Fasciola cinerea
+	Field CA1, Ventral part
+	Postpiriform transition area
+	Primary somatosensory area
+	Supplemental somatosensory area
+	Laterolateral visual area
+	Mediolateral visual area
+	Field CA1, Dorsal part
+	Dorsal agranular insular area
+	Primary visual area
+	Nucleus of lateral olfactory tract, dorsal cap
+	Field CA2
+	Anterior cingulate area, Ventral part
+	Primary visual area
+	Presubiculum
+	Anterior cingulate area, Dorsal part
+	Posterior auditory area
+	Piriform area
+	Anterior laterolateral visual area
+	Piriform-amygdalar area
+	Perirhinal area
+	Piriform-amygdalar area
+	Indusium griseum
+	Ventral auditory areas
+	Posterior auditory area
+	Ventral agranular insular area
+	Posterolateral visual area
+	Piriform area
+	Subiculum, Ventral part
+	Posterior agranular insular area
+	Anterolateral visual area
+	Parasubiculum
+	Parasubiculum
+	Dorsal auditory areas
+	Dorsal agranular insular area
+	Ventral auditory areas
+	Visceral area
+	Subiculum, Dorsal part
+	Posterior parietal association areas
+	Nucleus of lateral olfactory tract
+	Lateral orbital area
+	Medial orbital area
+	Ventral orbital area
+	Rostrolateral visual area
+	Primary auditory area
+	Ectorhinal area
+	Anteromedial visual area
+	Anterolateral visual area
+	Retrosplenial region, Ventral Part, Anterior Zone
+	Retrosplenial region, Dorsal part
+	Ventrolateral orbital area
+	Claustrum
+	Cortical amygdala area, Posterior part, Lateral zone
+	Ventral agranular insular area
+	Posterior agranular insular area
+	Retrosplenial region, Lateral agranular part
+	Postpiriform transition area
+
+------------------------------------------
+left_AOB(34):
+	Ventral auditory areas
+	Piriform area
+	Secondary somatomotor areas
+	Anteromedial visual area
+	Piriform-amygdalar area
+	Prelimbic area
+	Dorsal auditory areas
+	Primary somatosensory area
+	Cortical amygdala area, Posterior part, Lateral zone
+	Posterior auditory area
+	Piriform-amygdalar area
+	Secondary somatomotor areas
+	Cortical amygdala area, Posterior part, Medial zone
+	Cortical amygdala area, Posterior part, Lateral zone
+	Anterior cingulate area, Ventral part
+	Basomedial amygdalar nucleus, Posterior part
+	Anterior cingulate area, Dorsal part
+	Primary visual area
+	Primary somatomotor area
+	Entorhinal area, Lateral part
+	Primary somatomotor area
+	Cortical amygdala area, Posterior part, Medial zone
+	Temporal association areas
+	Supplemental somatosensory area
+	Postpiriform transition area
+	Postpiriform transition area
+	Rostrolateral visual area
+	Anterior cingulate area, Ventral part
+	Primary auditory area
+	Accessory olfactory bulb
+	Claustrum
+	Entorhinal area, Lateral part
+	Anterior olfactory area
+	Posterolateral visual area
+
+------------------------------------------
+right_AUDp(35):
+	Laterolateral visual area
+	Mediolateral visual area
+	Ventral auditory areas
+	Piriform area
+	Fasciola cinerea
+	Anteromedial visual area
+	Intermediolateral visual area
+	Gustatory area
+	Dorsal auditory areas
+	Lateral orbital area
+	Primary somatosensory area
+	Perirhinal area
+	Dentate gyrus
+	Cortical subplate, Layer 6b
+	Posterior agranular insular area
+	Ventral agranular insular area
+	Posterior auditory area
+	Ventrolateral orbital area
+	Dorsal agranular insular area
+	Anterior laterolateral visual area
+	Retrosplenial region, Ventral part, Zone b/c
+	Anterior cingulate area, Dorsal part
+	Visceral area
+	Posterior parietal association areas
+	Primary visual area
+	Temporal association areas
+	Indusium griseum
+	Supplemental somatosensory area
+	Rostrolateral visual area
+	Anterolateral visual area
+	Primary auditory area
+	Field CA3
+	Posterolateral visual area
+	Retrosplenial region, Dorsal part
+	Posteromedial visual area
+
+	# of nodes --> 308
+	# of edges --> 11858
