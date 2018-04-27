@@ -1,3 +1,6 @@
 .idea/*
+.idea/
 output/*
 *.pyc
+*.iml
+*.xml
