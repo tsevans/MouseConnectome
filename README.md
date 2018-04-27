@@ -14,7 +14,9 @@ A [recent paper](http://www.pnas.org/content/pnas/114/45/E9692.full.pdf) titled 
 The current data for the model of a rat's brain consists of two, bilaterally symmetric cortical domains with identical sets of association connections. Each domain has 5,852 (<img src="https://latex.codecogs.com/gif.latex?77^{2}-77" title="77^{2}-77" />) possible association connections and 5,929 commissural connections (<img src="https://latex.codecogs.com/gif.latex?77^{2}" title="77^{2}" />), for a total of 11,740 association connections and 11,858 commissural connections in both domains.
 
 ## Datasets
-Explain
+  #### Mouse Files
+  - mouse_info.txt
+    * Tab delimited list of all 77 regions in the mouse connectome, each line contains the acronym for the region and the full name of the region.
 
 ## Implementation
 Explain
