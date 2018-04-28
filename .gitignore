@@ -1,5 +1,4 @@
 .idea/*
-.idea/
 output/*
 *.pyc
 *.iml

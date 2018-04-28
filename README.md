@@ -15,7 +15,7 @@ The current data for the model of a rat's brain consists of two, bilaterally sym
 
 ## Datasets
   #### Mouse Files
-  - mouse_info.txt
+  - mouse_regions.txt
     * Tab delimited list of all 77 regions in the mouse connectome, each line contains the acronym for the region and the full name of the region.
 
 ## Implementation

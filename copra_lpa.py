@@ -154,8 +154,8 @@ def lpa(graph, v):
 
 
 def print_graph_info(graph):
-    # game_info = read_game_info_from_file('mouse_info.txt')
-    game_info = read_mouse_info('mouse_info.txt')
+    # game_info = read_game_info_from_file('mouse_regions.txt')
+    game_info = read_mouse_info('mouse_regions.txt')
     info = {}
 
     for node in graph.nodes():

@@ -55,6 +55,14 @@ def parse_line_vertices(line_list):
     return vertex_map.keys()
 
 
+def add_weights(igr):
+    """
+    Adds weights to igraph object edges, corresponding to integer-mapped values.
+    :param igr: Igraph graph object to make weighted.
+    """
+
+
+
 def plot_data(vertices, edges, f_name):
     """
     Plot network data in three-dimensional space.
@@ -63,6 +71,7 @@ def plot_data(vertices, edges, f_name):
     :param f_name: Name of HTML file to generate.
     """
     graph = ig.Graph(edges, directed=False)
+
     colors = []
     for v in vertices:
         c = ColorHash(v)
@@ -114,7 +123,7 @@ def plot_data(vertices, edges, f_name):
         axis = dict(showbackground=False, showline=False, zeroline=False,
                     showgrid=False, showticklabels=False, title='')
 
-        layout = Layout(title="3D visualization of macaque cortical area network",
+        layout = Layout(title="3D visualization of a cortical area network",
                         showlegend=False,
                         scene=Scene(xaxis=XAxis(axis), yaxis=YAxis(axis), zaxis=ZAxis(axis), ),
                         margin=Margin(t=100),
@@ -124,7 +133,7 @@ def plot_data(vertices, edges, f_name):
     data = Data([trace_edges(edges, spatial),
                  trace_vertices(vertices, spatial)])
     fig = Figure(data=data, layout=build_layout())
-    py.plot(fig, filename='output/' + f_name + '.html')
+    #py.plot(fig, filename='output/' + f_name + '.html')
 
 
 def print_header(filename):
@@ -142,7 +151,7 @@ def print_header(filename):
 
 
 if __name__ == '__main__':
-    test_cat = 'data/cat.txt'
+    test_cat = 'data/mouse.txt'
     print_header(test_cat)
     vertices, edges = process_file(test_cat)
     plot_data(vertices, edges, 'Cat')

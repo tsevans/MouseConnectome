@@ -13,7 +13,7 @@ def process_dataset_two():
 
 def process_dataset_three():
     fle = open('processed.csv')
-    new = open('mouse_info.txt', 'w')
+    new = open('mouse_regions.txt', 'w')
     for line in fle.readlines():
         sp = line.split(',', 1)
         wline = sp[0] + "\t" + sp[1]
