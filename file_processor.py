@@ -87,6 +87,7 @@ def make_weighted_mouse_connectome():
         from_index += 1
     finaldata.close()
 
+
 def get_mouse_region_names():
     """
     Creates mapping of region abbreviations to formal names of regions in mouse brain.

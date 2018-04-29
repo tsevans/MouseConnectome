@@ -15,55 +15,72 @@ def convert_vertex(v):
 
 
 def process_file(filename):
+    """
+    Process an input file for its vertices, edges, and weights.
+    :param filename: Name of file to process.
+    :return: List of vertices, edges, and weights parsed from the file.
+    """
+    def parse_line_vertices(ln_list):
+        """
+        Parse list of vertices from input file into a list.
+        :param ln_list: List of lines in input file.
+        :return: List of vertices in graph.
+        """
+        vertex_map = {}
+        edge_list = []
+        val_count = 1
+        for ln in ln_list:
+            parts = ln.split()
+            src = parts[0]
+            dst = parts[1]
+            if src not in vertex_map:
+                vertex_map[src] = val_count
+                val_count = val_count + 1
+            if dst not in vertex_map:
+                vertex_map[dst] = val_count
+                val_count = val_count + 1
+            edge_list.append((src, dst))
+        global vertex_index
+        vertex_index = vertex_map
+        return vertex_map.keys()
+
+    def parse_line_edges(ln_list):
+        """
+        Parse list of edges from file into a list.
+        :param ln_list: List of lines in input file.
+        :return: List of edges in graph.
+        """
+        edge_list = []
+        for ln in ln_list:
+            parts = ln.split()
+            src = convert_vertex(parts[0])
+            dst = convert_vertex(parts[1])
+            edge_list.append((src, dst))
+        return edge_list
+
+    def parse_weights(ln_list):
+        """
+        Parse weights of each line into a list.
+        :param ln_list: Igraph graph object to make weighted.
+        :return:
+        """
+        weights = []
+        for ln in ln_list:
+            weights.append(ln.split()[2])
+        return weights
+
     edge_file = open(filename)
     line_list = edge_file.readlines()
+    edge_file.close()
     proc_vertices = parse_line_vertices(line_list)
     proc_edges = parse_line_edges(line_list)
-    edge_file.close()
+    proc_weights = parse_weights(line_list)
     print(str(len(proc_vertices)) + ' vertices')
     print(str(len(proc_edges)) + ' edges')
-    return proc_vertices, proc_edges
+    return proc_vertices, proc_edges, proc_weights
 
 
-def parse_line_edges(line_list):
-    edge_list = []
-    for ln in line_list:
-        parts = ln.split()
-        src = convert_vertex(parts[0])
-        dst = convert_vertex(parts[1])
-        edge_list.append((src, dst))
-    return edge_list
-
-
-def parse_line_vertices(line_list):
-    vertex_map = {}
-    edge_list = []
-    val_count = 1
-    for ln in line_list:
-        parts = ln.split()
-        src = parts[0]
-        dst = parts[1]
-        if src not in vertex_map:
-            vertex_map[src] = val_count
-            val_count = val_count + 1
-        if dst not in vertex_map:
-            vertex_map[dst] = val_count
-            val_count = val_count + 1
-        edge_list.append((src, dst))
-    global vertex_index
-    vertex_index = vertex_map
-    return vertex_map.keys()
-
-
-def add_weights(igr):
-    """
-    Adds weights to igraph object edges, corresponding to integer-mapped values.
-    :param igr: Igraph graph object to make weighted.
-    """
-
-
-
-def plot_data(vertices, edges, f_name):
+def plot_data(vertices, edges, weights, f_name):
     """
     Plot network data in three-dimensional space.
     :param vertices: List of vertices in the network.
@@ -71,7 +88,7 @@ def plot_data(vertices, edges, f_name):
     :param f_name: Name of HTML file to generate.
     """
     graph = ig.Graph(edges, directed=False)
-
+    graph.es["weight"] = [weights[e] for e in range(len(graph.es))]
     colors = []
     for v in vertices:
         c = ColorHash(v)
@@ -133,7 +150,7 @@ def plot_data(vertices, edges, f_name):
     data = Data([trace_edges(edges, spatial),
                  trace_vertices(vertices, spatial)])
     fig = Figure(data=data, layout=build_layout())
-    #py.plot(fig, filename='output/' + f_name + '.html')
+    py.plot(fig, filename='output/' + f_name + '.html')
 
 
 def print_header(filename):
@@ -151,7 +168,7 @@ def print_header(filename):
 
 
 if __name__ == '__main__':
-    test_cat = 'data/mouse.txt'
-    print_header(test_cat)
-    vertices, edges = process_file(test_cat)
-    plot_data(vertices, edges, 'Cat')
+    mouse = 'data/final_mouse_weighted.txt'
+    print_header(mouse)
+    vertices, edges, weights = process_file(mouse)
+    plot_data(vertices, edges, weights, 'Mouse')
