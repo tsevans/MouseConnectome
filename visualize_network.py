@@ -92,7 +92,10 @@ def plot_data(vertices, edges, weights, f_name):
     colors = []
     for v in vertices:
         c = ColorHash(v)
-        colors.append('rgb(%s,%s,%s)' % tuple(c.rgb))
+        if v.startswith('one'):
+            colors.append('rgb(130,%s,255)' % c.rgb[1])
+        elif v.startswith('two'):
+            colors.append('rgb(255,160,%s)' % c.rgb[2])
 
     # Spatial layout of graph components
     spatial = graph.layout('kk', dim=3)
