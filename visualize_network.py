@@ -3,6 +3,7 @@ import plotly.offline as py
 from plotly.graph_objs import *
 from colorhash import ColorHash
 from copra_lpa import *
+import time
 
 vertex_index = {}
 
@@ -20,6 +21,7 @@ def process_file(filename):
     :param filename: Name of file to process.
     :return: List of vertices, edges, and weights parsed from the file.
     """
+
     def parse_line_vertices(ln_list):
         """
         Parse list of vertices from input file into a list.
@@ -90,9 +92,7 @@ def plot_data(vertices, edges, weights, f_name):
     graph = ig.Graph(edges, directed=False)
     graph.es["weight"] = [weights[e] for e in range(len(graph.es))]
 
-    int_weights = [int(w) for w in weights]
-    lpa = graph.community_edge_betweenness(weights=int_weights)
-    print(lpa.as_clustering())
+    calculate_edge_betweenness(graph, weights)
 
     colors = []
     for v in vertices:
@@ -159,6 +159,38 @@ def plot_data(vertices, edges, weights, f_name):
     # py.plot(fig, filename='output/' + f_name + '.html')
 
 
+def calculate_edge_betweenness(graph, weights):
+    print('\n+------------------+')
+    print('| Edge Betweenness |')
+    print('+------------------+')
+
+    start = time.time()
+    int_weights = [int(w) for w in weights]
+    lpa = graph.community_edge_betweenness(weights=int_weights)
+    clus = lpa.as_clustering()
+    cluster_index = 0
+    for c in clus:
+        if cluster_index is 0:
+            cluster_index += 1
+            continue
+        clist = []
+        for rep in c:
+            if rep is 0:
+                continue
+            clist.append(convert_vertex(rep))
+        print(' Cluster # %d' % cluster_index)
+        cluster_index += 1
+        ones = [one for one in clist if one.startswith('one_')]
+        ones = [o.split("_")[1] for o in ones]
+        twos = [two for two in clist if two.startswith('two_')]
+        twos = [t.split("_")[1] for t in twos]
+        print('\tSide 1:\n\t' + str(ones))
+        print('\tSide 2:\n\t' + str(twos) + '\n')
+
+    end = time.time()
+    print('Edge betweenness took ' + str(end-start) + ' seconds.')
+
+
 def print_header(filename):
     """
     Formatted printing of file name in header of output.
@@ -178,5 +210,3 @@ if __name__ == '__main__':
     print_header(mouse)
     vertices, edges, weights = process_file(mouse)
     plot_data(vertices, edges, weights, 'Mouse')
-    for k,v in vertex_index.items():
-        print(str(k) + ' -> ' + str(v))
