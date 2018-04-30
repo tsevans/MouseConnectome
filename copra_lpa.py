@@ -5,7 +5,14 @@ import matplotlib.pyplot as plt
 
 def read_graph_from_file(path):
     # read edge-list from file
-    graph = nx.read_edgelist(path, data=(('weight', float),))
+    graph = nx.Graph()
+    fl = open(path)
+    weighted_edges = []
+    for ln in fl.readlines():
+        weighted_edges.append(tuple(ln.split()))
+    graph.add_weighted_edges_from(weighted_edges)
+
+    #graph = nx.read_edgelist(path, data=(('weight', float),))
 
     # initial graph's node's attribute 'label' with its id
     for node, data in graph.nodes(True):
@@ -154,8 +161,7 @@ def lpa(graph, v):
 
 
 def print_graph_info(graph):
-    # game_info = read_game_info_from_file('mouse_regions.txt')
-    game_info = read_mouse_info('mouse_regions.txt')
+    game_info = read_mouse_info('data/mouse_regions.txt')
     info = {}
 
     for node in graph.nodes():
@@ -164,7 +170,6 @@ def print_graph_info(graph):
 
         for label in current_label:
             info.setdefault(label, []).append(game_info.get(parts[1], node))
-
 
     print 'node num:', len(graph.nodes())
     print 'class num:', len(info.keys())
@@ -180,8 +185,8 @@ def print_graph_info(graph):
 
 if __name__ == '__main__':
     #g = read_graph_from_file('f.data')
-    g = read_graph_from_file('mouse.txt')
-    g = lpa(g, 6)
+    g = read_graph_from_file('data/final_mouse_weighted.txt')
+    g = lpa(g, 30)
     print_graph_info(g)
 
     #node_color = [float(g.node[v]['current_label'].keys()[0]) for v in g]
