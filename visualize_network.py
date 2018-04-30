@@ -89,13 +89,16 @@ def plot_data(vertices, edges, weights, f_name):
     """
     graph = ig.Graph(edges, directed=False)
     graph.es["weight"] = [weights[e] for e in range(len(graph.es))]
+
+    int_weights = [int(w) for w in weights]
+    lpa = graph.community_edge_betweenness(weights=int_weights)
+    print(lpa.as_clustering())
+
     colors = []
     for v in vertices:
-        c = ColorHash(v)
-        if v.startswith('one'):
-            colors.append('rgb(130,%s,255)' % c.rgb[1])
-        elif v.startswith('two'):
-            colors.append('rgb(255,160,%s)' % c.rgb[2])
+        parts = v.split('_')
+        c = ColorHash(parts[1])
+        colors.append('rgb(%s,%s,%s)' % tuple(c.rgb))
 
     # Spatial layout of graph components
     spatial = graph.layout('kk', dim=3)
@@ -153,7 +156,7 @@ def plot_data(vertices, edges, weights, f_name):
     data = Data([trace_edges(edges, spatial),
                  trace_vertices(vertices, spatial)])
     fig = Figure(data=data, layout=build_layout())
-    py.plot(fig, filename='output/' + f_name + '.html')
+    # py.plot(fig, filename='output/' + f_name + '.html')
 
 
 def print_header(filename):
@@ -175,3 +178,5 @@ if __name__ == '__main__':
     print_header(mouse)
     vertices, edges, weights = process_file(mouse)
     plot_data(vertices, edges, weights, 'Mouse')
+    for k,v in vertex_index.items():
+        print(str(k) + ' -> ' + str(v))
