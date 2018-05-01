@@ -30,7 +30,7 @@ def process_file(filename):
         """
         vertex_map = {}
         edge_list = []
-        val_count = 1
+        val_count = 0
         for ln in ln_list:
             parts = ln.split()
             src = parts[0]
