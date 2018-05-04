@@ -3,6 +3,7 @@ import plotly.offline as py
 from plotly.graph_objs import *
 from colorhash import ColorHash
 from copra_lpa import *
+import time
 
 vertex_index = {}
 
@@ -20,6 +21,7 @@ def process_file(filename):
     :param filename: Name of file to process.
     :return: List of vertices, edges, and weights parsed from the file.
     """
+
     def parse_line_vertices(ln_list):
         """
         Parse list of vertices from input file into a list.
@@ -28,7 +30,7 @@ def process_file(filename):
         """
         vertex_map = {}
         edge_list = []
-        val_count = 1
+        val_count = 0
         for ln in ln_list:
             parts = ln.split()
             src = parts[0]
@@ -80,25 +82,42 @@ def process_file(filename):
     return proc_vertices, proc_edges, proc_weights
 
 
-def plot_data(vertices, edges, weights, f_name):
+def plot_data(vertices, edges, weights, f_name, cscale=0):
     """
     Plot network data in three-dimensional space.
     :param vertices: List of vertices in the network.
     :param edges: List of connections in the network.
     :param f_name: Name of HTML file to generate.
+    :param cscale: Color scale for network, blue by default. [(0, Blue), (1, Green), (2, Orange)]
     """
     graph = ig.Graph(edges, directed=False)
     graph.es["weight"] = [weights[e] for e in range(len(graph.es))]
 
-    int_weights = [int(w) for w in weights]
-    lpa = graph.community_edge_betweenness(weights=int_weights)
-    print(lpa.as_clustering())
+    # calculate_edge_betweenness(graph, weights)
 
-    colors = []
-    for v in vertices:
-        parts = v.split('_')
-        c = ColorHash(parts[1])
-        colors.append('rgb(%s,%s,%s)' % tuple(c.rgb))
+    def build_colorscale(c, vert_list):
+        """
+        Build the colorscale for vertices in the visualization.
+        :param c: Parameter to decide colorscale.
+        :param vert_list: List of vertices to color.
+        :return: List of colors to associate with each vertex.
+        """
+        clrs = []
+        for v in vert_list:
+            q = ColorHash(v)
+            col_str = 'rgb('
+            if c is 0:
+                col_str += '%s,%s,255)' % (q.rgb[0], q.rgb[1])
+            elif c is 1:
+                col_str += '%s,255,%s)' % (q.rgb[0], q.rgb[2])
+            elif c is 2:
+                col_str += '255,%s,%s)' % (q.rgb[1], q.rgb[2])
+            else:
+                col_str += '%s,%s,%s)' % tuple(c.rgb)
+            clrs.append(col_str)
+        return clrs
+
+    colors = build_colorscale(cscale, vertices)
 
     # Spatial layout of graph components
     spatial = graph.layout('kk', dim=3)
@@ -146,7 +165,7 @@ def plot_data(vertices, edges, weights, f_name):
         axis = dict(showbackground=False, showline=False, zeroline=False,
                     showgrid=False, showticklabels=False, title='')
 
-        layout = Layout(title="3D visualization of a cortical area network",
+        layout = Layout(title="3D visualization of a " + f_name + " cortical area network",
                         showlegend=False,
                         scene=Scene(xaxis=XAxis(axis), yaxis=YAxis(axis), zaxis=ZAxis(axis), ),
                         margin=Margin(t=100),
@@ -156,7 +175,37 @@ def plot_data(vertices, edges, weights, f_name):
     data = Data([trace_edges(edges, spatial),
                  trace_vertices(vertices, spatial)])
     fig = Figure(data=data, layout=build_layout())
-    # py.plot(fig, filename='output/' + f_name + '.html')
+    py.plot(fig, filename='output/' + f_name + '.html')
+
+
+def calculate_edge_betweenness(graph, weights):
+    print('\n+------------------+')
+    print('| Edge Betweenness |')
+    print('+------------------+')
+
+    start = time.time()
+    int_weights = [int(w) for w in weights]
+    lpa = graph.community_edge_betweenness(weights=int_weights)
+    clus = lpa.as_clustering()
+    cluster_index = 0
+    for c in clus:
+        if cluster_index is 0:
+            cluster_index += 1
+            continue
+        clist = []
+        for rep in c:
+            if rep is 0:
+                continue
+            clist.append(convert_vertex(rep))
+        print(' Cluster # %d' % cluster_index)
+        cluster_index += 1
+        ones = [one.split("_")[1] for one in clist if one.startswith('one_')]
+        print('\tSide 1:\n\t  ' + str(ones))
+        twos = [two.split("_")[1] for two in clist if two.startswith('two_')]
+        print('\tSide 2:\n\t  ' + str(twos) + '\n')
+    end = time.time()
+    print('Modularity of clusters is: ' + str(clus.modularity))
+    print('Edge betweenness took ' + str(end-start) + ' seconds.')
 
 
 def print_header(filename):
@@ -177,6 +226,4 @@ if __name__ == '__main__':
     mouse = 'data/final_mouse_weighted.txt'
     print_header(mouse)
     vertices, edges, weights = process_file(mouse)
-    plot_data(vertices, edges, weights, 'Mouse')
-    for k,v in vertex_index.items():
-        print(str(k) + ' -> ' + str(v))
+    plot_data(vertices, edges, weights, 'Mouse', 2)
